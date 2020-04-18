@@ -1,0 +1,13 @@
+ static int superDigit(String n, int k) 
+    {
+        long add=0;
+        for(int i=0;i<n.length();i++)
+        {
+            add+=Integer.parseInt(n.valueOf(n.charAt(i)))*k;
+        }
+        String s=String.valueOf(add);
+        if(s.length()==1)
+        return (int)add;
+        else
+        return superDigit(s,1);
+    }
